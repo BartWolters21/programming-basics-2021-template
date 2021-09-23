@@ -1,57 +1,17 @@
-function drawDiamond() {
-    var canvas = getElement();
-    if (canvas.getContext){
-      //Ruby's
-      var x=100; var y=100;
-      var w=200; var h=200;
-      var ctx = canvas.getContext('2d');
-      color=('#FF0000');
-      sketch(x,y,w,h,ctx,color);
-  
-    }
-  }
+console.log('JavaScript is working!')
+removeFromString();
 
-  function getElement() {
-    return document.getElementById('myCanvas')
+function isItEven() {
+    const number = 2;
+    if (number % 2 === 0) {
+        console.log("The number is even.")
+    } else {
+        console.log("The number is not even.")
+    }
 }
-  
-   function sketch(x,y,w,h,ctx,color){
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      ctx.lineTo(x+w/2,y+0.7*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.fill();
-      
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+w/2, y);
-      ctx.lineTo(x+w/2,y+0.7*h);
-      ctx.lineTo(x+w,y);
-      ctx.fill();
-      
-      // Upper left triangle
-      ctx.beginPath();
-      ctx.moveTo(x+w/4,y-0.3*h);
-      ctx.lineTo(x,y);
-      ctx.lineTo(x+w/2,y);
-      ctx.fill();
-      
-      // centre inverted triangle
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+w/4,y-0.3*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.lineTo(x+0.75*w,y-0.3*h);
-      ctx.fill();
-      
-      //Upper left triangle.
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+0.75*w,y-0.3*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.lineTo(x+w,y);
-      ctx.fill();
-    
-      
-   }
+
+function removeFromString() {
+    const string = "Programming is not so cool";
+    const removed = string.replace("not ", "")
+    console.log(removed)
+}
