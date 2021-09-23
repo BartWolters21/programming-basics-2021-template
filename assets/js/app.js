@@ -1,7 +1,7 @@
 console.log('JavaScript is working!')
 removeFromString();
 
-function isItEven() {
+function isTheNumberEven() {
     const number = 2;
     if (number % 2 === 0) {
         console.log("The number is even.")
