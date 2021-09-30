@@ -1,57 +1,28 @@
-function drawDiamond() {
-    var canvas = getElement();
-    if (canvas.getContext){
-      //Ruby's
-      var x=100; var y=100;
-      var w=200; var h=200;
-      var ctx = canvas.getContext('2d');
-      color=('#FF0000');
-      sketch(x,y,w,h,ctx,color);
-  
-    }
+function happyNewYear(year){
+  year = 2021;
+
+  for(i = 10; i > 0; i--){
+    console.log(i);
   }
 
-  function getElement() {
-    return document.getElementById('myCanvas')
+  console.log('Happy New ' + year);
+
 }
-  
-   function sketch(x,y,w,h,ctx,color){
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      ctx.lineTo(x+w/2,y+0.7*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.fill();
-      
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+w/2, y);
-      ctx.lineTo(x+w/2,y+0.7*h);
-      ctx.lineTo(x+w,y);
-      ctx.fill();
-      
-      // Upper left triangle
-      ctx.beginPath();
-      ctx.moveTo(x+w/4,y-0.3*h);
-      ctx.lineTo(x,y);
-      ctx.lineTo(x+w/2,y);
-      ctx.fill();
-      
-      // centre inverted triangle
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+w/4,y-0.3*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.lineTo(x+0.75*w,y-0.3*h);
-      ctx.fill();
-      
-      //Upper left triangle.
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+0.75*w,y-0.3*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.lineTo(x+w,y);
-      ctx.fill();
-    
-      
-   }
+
+factorial(5)
+// checks the sum of the array
+function factorial(num) {
+    let finalNumber = 1;
+    for (i = 1; i <= num; i++) {
+        finalNumber = finalNumber * i;
+    }
+    console.log(finalNumber);
+}
+
+checkForACharacterInSentence("Test sentence", "t")
+
+// Check for character in the sentence
+function checkForACharacterInSentence(sentence, character) {
+    const count = sentence.split(new RegExp(character, "gi")).length - 1
+    console.log(`Sentence contains "${character}" ${count} times!`)
+}
