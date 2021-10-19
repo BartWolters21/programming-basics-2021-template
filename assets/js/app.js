@@ -1,57 +1,71 @@
-function drawDiamond() {
-    var canvas = getElement();
-    if (canvas.getContext){
-      //Ruby's
-      var x=100; var y=100;
-      var w=200; var h=200;
-      var ctx = canvas.getContext('2d');
-      color=('#FF0000');
-      sketch(x,y,w,h,ctx,color);
-  
-    }
-  }
+formatObject()
 
-  function getElement() {
-    return document.getElementById('myCanvas')
+function formatObject() {
+
+    const drivers = [{
+        driver: 'Max',
+        team: 'Redbull',
+        lapTimes: [55.99, 63.00, 63.01, 54.01, 62.79, 52.88, 53.10, 54.12]
+    }, {
+        driver: 'Lewis',
+        team: 'Mercedes',
+        lapTimes: [55.90, 63.10, 63.1, 53.01, 64.79, 52.80, 52.09, 54.11]
+    }]
+    console.log(drivers[0].driver)
 }
-  
-   function sketch(x,y,w,h,ctx,color){
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      ctx.lineTo(x+w/2,y+0.7*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.fill();
-      
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+w/2, y);
-      ctx.lineTo(x+w/2,y+0.7*h);
-      ctx.lineTo(x+w,y);
-      ctx.fill();
-      
-      // Upper left triangle
-      ctx.beginPath();
-      ctx.moveTo(x+w/4,y-0.3*h);
-      ctx.lineTo(x,y);
-      ctx.lineTo(x+w/2,y);
-      ctx.fill();
-      
-      // centre inverted triangle
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+w/4,y-0.3*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.lineTo(x+0.75*w,y-0.3*h);
-      ctx.fill();
-      
-      //Upper left triangle.
-      ctx.fillStyle=color;
-      ctx.beginPath();
-      ctx.moveTo(x+0.75*w,y-0.3*h);
-      ctx.lineTo(x+w/2,y);
-      ctx.lineTo(x+w,y);
-      ctx.fill();
-    
-      
-   }
+
+averageLapTime(drivers);
+function averageLapTime(drivers) {
+    const sum = drivers[0].lapRounds.reduce((a, b) => a + b, 0);
+    const avg = (sum / drivers[0].lapRounds.length) || 0;
+    console.log(`The sum is: ${sum}. The average is: ${avg}.`);
+
+}
+
+myProfession()
+
+function myProfession() {
+    const teachers = [{
+        name: "Loek",
+        profession: "Teacher",
+        brand: "Linux"
+    }, {
+        name: "Daan",
+        profession: "Teacher",
+        brand: "Arduino"
+    }, {
+        name: "Rimmert",
+        profession: "Teacher",
+        brand: "Apple"
+    }]
+    for (let i = 0; i < teachers.length; i++) {
+        console.log(`${teachers[i].name} has a profession as a ${teachers[i].profession} and he likes to work on a ${teachers[i].brand} computer`)
+    }
+}
+
+salaryPerHour()
+
+function salaryPerHour() {
+    const teachers = [{
+        name: "Loek",
+        profession: "Teacher",
+        brand: "Linux",
+        hoursPerWeek: 30,
+        salary: 2650
+    }, {
+        name: "Daan",
+        profession: "Teacher",
+        brand: "Arduino",
+        hoursPerWeek: 33,
+        salary: 2800
+    }, {
+        name: "Rimmert",
+        profession: "Teacher",
+        brand: "Apple",
+        hoursPerWeek: 16,
+        salary: 1800
+    }]
+    for (let i = 0; i < teachers.length; i++) {
+        console.log(teachers[i].name + "'s salary is €" + teachers[i].salary / teachers[i].hoursPerWeek)
+    }
+}
